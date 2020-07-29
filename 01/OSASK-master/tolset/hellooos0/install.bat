@@ -1,1 +1,1 @@
-..\z_tools\imgtol.com w a: helloos.img
+..\z_tools\imgtol.com c input.img helloos.img
