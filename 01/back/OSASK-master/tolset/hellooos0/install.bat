@@ -1,0 +1,1 @@
+..\z_tools\imgtol.com c input.img helloos.img

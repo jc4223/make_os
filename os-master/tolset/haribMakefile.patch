@@ -1,0 +1,22 @@
+--- Makefile.org	2016-04-10 20:37:03.610916033 +0900
++++ Makefile	2016-04-10 20:37:20.905745859 +0900
+@@ -17,8 +17,8 @@
+ EDIMG    = $(TOOLPATH)edimg.exe
+ IMGTOL   = $(TOOLPATH)imgtol.com
+ GOLIB    = $(TOOLPATH)golib00.exe 
+-COPY     = copy
+-DEL      = del
++COPY     = cp
++DEL      = rm
+ 
+ # デフォルト動作
+ 
+@@ -49,7 +49,7 @@
+ 	$(BIM2HRB) bootpack.bim bootpack.hrb 0
+ 
+ haribote.sys : asmhead.bin bootpack.hrb Makefile
+-	copy /B asmhead.bin+bootpack.hrb haribote.sys
++	cat asmhead.bin bootpack.hrb > haribote.sys
+ 
+ # 一般規則
+ 
