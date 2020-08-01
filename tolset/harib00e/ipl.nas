@@ -1,6 +1,8 @@
 ; haribote-ipl
 ; TAB=4
 
+CYLS	EQU		10				; CYLS를 10으로 정의
+
 		ORG		0x7c00			; 메모리 안에서 로딩되는 곳
 
 ; 아래는 표준 FAT12 포맷 플로피 디스켓을 위한 내용들
@@ -65,7 +67,14 @@ next:
 		ADD		CL,1			; CL에 1 더함
 		CMP		CL,18			; CL과 18 비교
 		JBE		readloop		; CL <= 18 readloop로
-
+		MOV		CL,1
+		ADD		DH,1
+		CMP		DH,2
+		JB		readloop		; DH < 2 read loop로
+		MOV		DH,0
+		ADD		CH,1
+		CMP		CH,CYLS
+		JB		readloop		; CH < CYLS read loop로
 
 
 fin:
@@ -94,4 +103,3 @@ msg:
 		RESB	0x7dfe-$		; 나머지칸 0채우기
 
 		DB		0x55, 0xaa
-
