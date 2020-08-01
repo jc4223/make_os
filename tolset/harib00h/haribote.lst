@@ -1,0 +1,29 @@
+     1 00000000                                 ; haribote-os
+     2 00000000                                 ; TAB=4
+     3 00000000                                 
+     4 00000000                                 ; BOOT_INFO 관계
+     5  = 00000FF0                              CYLS	EQU		0x0ff0			; 부트섹터 설정
+     6  = 00000FF1                              LEDS	EQU		0x0ff1
+     7  = 00000FF2                              VMODE	EQU		0x0ff2			; 색상 갯수에 관한 정의, 몇비트 컬러인지
+     8  = 00000FF4                              SCRNX	EQU		0x0ff4			; 해상도 x
+     9  = 00000FF6                              SCRNY	EQU		0x0ff6			; 해상도 y
+    10  = 00000FF8                              VRAM	EQU		0x0ff8			; 그래픽 버퍼 개시번지
+    11 00000000                                 		
+    12                                          		ORG		0xc200			; harybote.sys가 로딩되는 메모리 주소
+    13 0000C200                                 
+    14 0000C200 B0 10                           		MOV		AL,0x10			; VGA 그래픽스, 320x200x8bit 컬러
+    15 0000C202 B4 00                           		MOV		AH,0x00
+    16 0000C204 C6 06 0FF2 08                   		MOV		BYTE [VMODE],8	; 화면 모드를 기록함.
+    17 0000C209 C7 06 0FF4 0140                 		MOV		WORD [SCRNX],320
+    18 0000C20F C7 06 0FF6 00C8                 		MOV		WORD [SCRNY],200
+    19 0000C215 66 C7 06 0FF8 000A0000          		MOV		DWORD [VRAM],0x000a0000
+    20 0000C21E                                 
+    21 0000C21E                                 ; 키보드 LED 상태를 BIOS가 알려줌
+    22 0000C21E                                 
+    23 0000C21E B4 02                           		MOV		AH,0x02
+    24 0000C220 CD 16                           		INT		0x16 			; keyboard BIOS
+    25 0000C222 A2 0FF1                         		MOV		[LEDS],AL
+    26 0000C225                                 
+    27 0000C225                                 fin:
+    28 0000C225 F4                              		HLT
+    29 0000C226 EB FD                           		JMP		fin
