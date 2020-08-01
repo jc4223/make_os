@@ -50,7 +50,7 @@ retry:
 		MOV		BX,0
 		MOV		DL,0x00			; A 드라이브
 		INT		0x13			; 디스크 바이오스 호출
-		JNC		next			; �G���[�������Ȃ����next��
+		JNC		next			; 에러가 없으면 next로
 		ADD		SI,1			; SI에 1더하기
 		CMP		SI,5			; SI와 5비교
 		JAE		error			; SI >= 5 이면 에러로
