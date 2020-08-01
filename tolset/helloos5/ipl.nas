@@ -1,35 +1,35 @@
 ; hello-os
 ; TAB=4
 
-		ORG		0x7c00			; ‚±‚ÌƒvƒƒOƒ‰ƒ€‚ª‚Ç‚±‚É“Ç‚Ýž‚Ü‚ê‚é‚Ì‚©
+		ORG		0x7c00			; ï¿½ï¿½ï¿½Ìƒvï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç‚ï¿½ï¿½É“Ç‚Ýï¿½ï¿½Ü‚ï¿½ï¿½Ì‚ï¿½
 
-; ˆÈ‰º‚Í•W€“I‚ÈFAT12ƒtƒH[ƒ}ƒbƒgƒtƒƒbƒs[ƒfƒBƒXƒN‚Ì‚½‚ß‚Ì‹Lq
+; ï¿½È‰ï¿½ï¿½Í•Wï¿½ï¿½ï¿½Iï¿½ï¿½FAT12ï¿½tï¿½Hï¿½[ï¿½}ï¿½bï¿½gï¿½tï¿½ï¿½ï¿½bï¿½sï¿½[ï¿½fï¿½Bï¿½Xï¿½Nï¿½Ì‚ï¿½ï¿½ß‚Ì‹Lï¿½q
 
 		JMP		entry
 		DB		0x90
-		DB		"HELLOIPL"		; ƒu[ƒgƒZƒNƒ^‚Ì–¼‘O‚ðŽ©—R‚É‘‚¢‚Ä‚æ‚¢i8ƒoƒCƒgj
-		DW		512				; 1ƒZƒNƒ^‚Ì‘å‚«‚³i512‚É‚µ‚È‚¯‚ê‚Î‚¢‚¯‚È‚¢j
-		DB		1				; ƒNƒ‰ƒXƒ^‚Ì‘å‚«‚³i1ƒZƒNƒ^‚É‚µ‚È‚¯‚ê‚Î‚¢‚¯‚È‚¢j
-		DW		1				; FAT‚ª‚Ç‚±‚©‚çŽn‚Ü‚é‚©i•’Ê‚Í1ƒZƒNƒ^–Ú‚©‚ç‚É‚·‚éj
-		DB		2				; FAT‚ÌŒÂ”i2‚É‚µ‚È‚¯‚ê‚Î‚¢‚¯‚È‚¢j
-		DW		224				; ƒ‹[ƒgƒfƒBƒŒƒNƒgƒŠ—Ìˆæ‚Ì‘å‚«‚³i•’Ê‚Í224ƒGƒ“ƒgƒŠ‚É‚·‚éj
-		DW		2880			; ‚±‚Ìƒhƒ‰ƒCƒu‚Ì‘å‚«‚³i2880ƒZƒNƒ^‚É‚µ‚È‚¯‚ê‚Î‚¢‚¯‚È‚¢j
-		DB		0xf0			; ƒƒfƒBƒA‚Ìƒ^ƒCƒvi0xf0‚É‚µ‚È‚¯‚ê‚Î‚¢‚¯‚È‚¢j
-		DW		9				; FAT—Ìˆæ‚Ì’·‚³i9ƒZƒNƒ^‚É‚µ‚È‚¯‚ê‚Î‚¢‚¯‚È‚¢j
-		DW		18				; 1ƒgƒ‰ƒbƒN‚É‚¢‚­‚Â‚ÌƒZƒNƒ^‚ª‚ ‚é‚©i18‚É‚µ‚È‚¯‚ê‚Î‚¢‚¯‚È‚¢j
-		DW		2				; ƒwƒbƒh‚Ì”i2‚É‚µ‚È‚¯‚ê‚Î‚¢‚¯‚È‚¢j
-		DD		0				; ƒp[ƒeƒBƒVƒ‡ƒ“‚ðŽg‚Á‚Ä‚È‚¢‚Ì‚Å‚±‚±‚Í•K‚¸0
-		DD		2880			; ‚±‚Ìƒhƒ‰ƒCƒu‘å‚«‚³‚ð‚à‚¤ˆê“x‘‚­
-		DB		0,0,0x29		; ‚æ‚­‚í‚©‚ç‚È‚¢‚¯‚Ç‚±‚Ì’l‚É‚µ‚Ä‚¨‚­‚Æ‚¢‚¢‚ç‚µ‚¢
-		DD		0xffffffff		; ‚½‚Ô‚ñƒ{ƒŠƒ…[ƒ€ƒVƒŠƒAƒ‹”Ô†
-		DB		"HELLO-OS   "	; ƒfƒBƒXƒN‚Ì–¼‘Oi11ƒoƒCƒgj
-		DB		"FAT12   "		; ƒtƒH[ƒ}ƒbƒg‚Ì–¼‘Oi8ƒoƒCƒgj
-		RESB	18				; ‚Æ‚è‚ ‚¦‚¸18ƒoƒCƒg‚ ‚¯‚Ä‚¨‚­
+		DB		"HELLOIPL"		; ï¿½uï¿½[ï¿½gï¿½Zï¿½Nï¿½^ï¿½Ì–ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½Rï¿½Éï¿½ï¿½ï¿½ï¿½Ä‚æ‚¢ï¿½i8ï¿½oï¿½Cï¿½gï¿½j
+		DW		512				; 1ï¿½Zï¿½Nï¿½^ï¿½Ì‘å‚«ï¿½ï¿½ï¿½i512ï¿½É‚ï¿½ï¿½È‚ï¿½ï¿½ï¿½Î‚ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½j
+		DB		1				; ï¿½Nï¿½ï¿½ï¿½Xï¿½^ï¿½Ì‘å‚«ï¿½ï¿½ï¿½i1ï¿½Zï¿½Nï¿½^ï¿½É‚ï¿½ï¿½È‚ï¿½ï¿½ï¿½Î‚ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½j
+		DW		1				; FATï¿½ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½ï¿½ï¿½nï¿½Ü‚é‚©ï¿½iï¿½ï¿½ï¿½Ê‚ï¿½1ï¿½Zï¿½Nï¿½^ï¿½Ú‚ï¿½ï¿½ï¿½É‚ï¿½ï¿½ï¿½j
+		DB		2				; FATï¿½ÌŒÂï¿½ï¿½i2ï¿½É‚ï¿½ï¿½È‚ï¿½ï¿½ï¿½Î‚ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½j
+		DW		224				; ï¿½ï¿½ï¿½[ï¿½gï¿½fï¿½Bï¿½ï¿½ï¿½Nï¿½gï¿½ï¿½ï¿½Ìˆï¿½Ì‘å‚«ï¿½ï¿½ï¿½iï¿½ï¿½ï¿½Ê‚ï¿½224ï¿½Gï¿½ï¿½ï¿½gï¿½ï¿½ï¿½É‚ï¿½ï¿½ï¿½j
+		DW		2880			; ï¿½ï¿½ï¿½Ìƒhï¿½ï¿½ï¿½Cï¿½uï¿½Ì‘å‚«ï¿½ï¿½ï¿½i2880ï¿½Zï¿½Nï¿½^ï¿½É‚ï¿½ï¿½È‚ï¿½ï¿½ï¿½Î‚ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½j
+		DB		0xf0			; ï¿½ï¿½ï¿½fï¿½Bï¿½Aï¿½Ìƒ^ï¿½Cï¿½vï¿½i0xf0ï¿½É‚ï¿½ï¿½È‚ï¿½ï¿½ï¿½Î‚ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½j
+		DW		9				; FATï¿½Ìˆï¿½Ì’ï¿½ï¿½ï¿½ï¿½i9ï¿½Zï¿½Nï¿½^ï¿½É‚ï¿½ï¿½È‚ï¿½ï¿½ï¿½Î‚ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½j
+		DW		18				; 1ï¿½gï¿½ï¿½ï¿½bï¿½Nï¿½É‚ï¿½ï¿½ï¿½ï¿½Â‚ÌƒZï¿½Nï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½é‚©ï¿½i18ï¿½É‚ï¿½ï¿½È‚ï¿½ï¿½ï¿½Î‚ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½j
+		DW		2				; ï¿½wï¿½bï¿½hï¿½Ìï¿½ï¿½i2ï¿½É‚ï¿½ï¿½È‚ï¿½ï¿½ï¿½Î‚ï¿½ï¿½ï¿½ï¿½È‚ï¿½ï¿½j
+		DD		0				; ï¿½pï¿½[ï¿½eï¿½Bï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½gï¿½ï¿½ï¿½Ä‚È‚ï¿½ï¿½Ì‚Å‚ï¿½ï¿½ï¿½ï¿½Í•Kï¿½ï¿½0
+		DD		2880			; ï¿½ï¿½ï¿½Ìƒhï¿½ï¿½ï¿½Cï¿½uï¿½å‚«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½xï¿½ï¿½ï¿½ï¿½
+		DB		0,0,0x29		; ï¿½æ‚­ï¿½í‚©ï¿½ï¿½È‚ï¿½ï¿½ï¿½ï¿½Ç‚ï¿½ï¿½Ì’lï¿½É‚ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½ï¿½Æ‚ï¿½ï¿½ï¿½ï¿½ç‚µï¿½ï¿½
+		DD		0xffffffff		; ï¿½ï¿½ï¿½Ô‚ï¿½{ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½Vï¿½ï¿½ï¿½Aï¿½ï¿½ï¿½Ôï¿½
+		DB		"HELLO-OS   "	; ï¿½fï¿½Bï¿½Xï¿½Nï¿½Ì–ï¿½ï¿½Oï¿½i11ï¿½oï¿½Cï¿½gï¿½j
+		DB		"FAT12   "		; ï¿½tï¿½Hï¿½[ï¿½}ï¿½bï¿½gï¿½Ì–ï¿½ï¿½Oï¿½i8ï¿½oï¿½Cï¿½gï¿½j
+		RESB	18				; ï¿½Æ‚è‚ ï¿½ï¿½ï¿½ï¿½18ï¿½oï¿½Cï¿½gï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½ï¿½
 
-; ƒvƒƒOƒ‰ƒ€–{‘Ì
+; ï¿½vï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½{ï¿½ï¿½
 
 entry:
-		MOV		AX,0			; ƒŒƒWƒXƒ^‰Šú‰»
+		MOV		AX,0			; ï¿½ï¿½ï¿½Wï¿½Xï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		MOV		SS,AX
 		MOV		SP,0x7c00
 		MOV		DS,AX
@@ -38,23 +38,23 @@ entry:
 		MOV		SI,msg
 putloop:
 		MOV		AL,[SI]
-		ADD		SI,1			; SI‚É1‚ð‘«‚·
+		ADD		SI,1			; SIï¿½ï¿½1ï¿½ð‘«‚ï¿½
 		CMP		AL,0
 		JE		fin
-		MOV		AH,0x0e			; ˆê•¶Žš•\Ž¦ƒtƒ@ƒ“ƒNƒVƒ‡ƒ“
-		MOV		BX,15			; ƒJƒ‰[ƒR[ƒh
-		INT		0x10			; ƒrƒfƒIBIOSŒÄ‚Ño‚µ
+		MOV		AH,0x0e			; ï¿½ê•¶ï¿½ï¿½ï¿½\ï¿½ï¿½ï¿½tï¿½@ï¿½ï¿½ï¿½Nï¿½Vï¿½ï¿½ï¿½ï¿½
+		MOV		BX,15			; ï¿½Jï¿½ï¿½ï¿½[ï¿½Rï¿½[ï¿½h
+		INT		0x10			; ï¿½rï¿½fï¿½IBIOSï¿½Ä‚Ñoï¿½ï¿½
 		JMP		putloop
 fin:
-		HLT						; ‰½‚©‚ ‚é‚Ü‚ÅCPU‚ð’âŽ~‚³‚¹‚é
-		JMP		fin				; –³ŒÀƒ‹[ƒv
+		HLT						; ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½CPUï¿½ï¿½ï¿½~ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		JMP		fin				; ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½v
 
 msg:
-		DB		0x0a, 0x0a		; ‰üs‚ð2‚Â
+		DB		0x0a, 0x0a		; ï¿½ï¿½ï¿½sï¿½ï¿½2ï¿½ï¿½
 		DB		"hello, world"
-		DB		0x0a			; ‰üs
+		DB		0x0a			; ï¿½ï¿½ï¿½s
 		DB		0
 
-		RESB	0x7dfe-$		; 0x7dfe‚Ü‚Å‚ð0x00‚Å–„‚ß‚é–½—ß
+		RESB	0x7dfe-$		; 0x7dfeï¿½Ü‚Å‚ï¿½0x00ï¿½Å–ï¿½ï¿½ß‚é–½ï¿½ï¿½
 
 		DB		0x55, 0xaa

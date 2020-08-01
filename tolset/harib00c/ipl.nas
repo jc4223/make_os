@@ -7,23 +7,23 @@
 
 		JMP		entry
 		DB		0x90
-		DB		"HELLOIPL"		; 부트섹터 이름. 마음대로해도 ok
+		DB		"HARIBOTE"		; 부트섹터 이름. 마음대로해도 ok
 		DW		512				; 1섹터 크기(바이트 단위, 512)
 		DB		1				; 클러스터 크기(1로 해야됨)
 		DW		1				; 예약된 섹터수 
 		DB		2				; 디스크 FAT 테이블 수
 		DW		224				; 루트 디렉토리 엔트리 수 (보통 224엔트리)
-		DW		2880				; 디스크 총섹터수
-		DW		0xf0				; 미디어 타입
+		DW		2880			; 디스크 총섹터수
+		DB		0xf0			; 미디어 타입
 		DW		9				; 하나의 FAT 테이블 섹터 수
 		DW		18				; 1트랙에 몇 색터가있는지
 		DW		2				; 헤드의 수
 		DD		0				; 파티션 없으므로 0
-		DD		2880				; 드라이브 크기 한번더씀
-		DB		0, 0, 0x29			; 필요하다고함
-		DD		0xffffffff			; 볼륨 시리얼 번호
-		DB		"HELLO-OS  "		; 디스크 이름
-		DB		"FAT12   "			; 포멧이름
+		DD		2880			; 드라이브 크기 한번더씀
+		DB		0,0,0x29		; 필요하다고함
+		DD		0xffffffff		; 볼륨 시리얼 번호
+		DB		"HARIBOTEOS "	; 디스크 이름
+		DB		"FAT12   "		; 포멧이름
 		RESB	18				; 18바이트 남김
 
 ; 프로그램 본체
@@ -87,7 +87,7 @@ putloop:
 
 msg:
 		DB		0x0a, 0x0a		; 줄바꿈 문자 2개
-		DB		"good i e yo you good good good"
+		DB		"load error"
 		DB		0x0a			; 줄바꿈
 		DB		0
 
