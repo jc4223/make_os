@@ -38,28 +38,28 @@ entry:
 		MOV		SI,msg
 putloop:
 		MOV		AL,[SI]
-		ADD		SI,1			; SI‚É1‚ð‘«‚·
+		ADD		SI,1			; SIì— 1 ë”í•¨
 		CMP		AL,0
 		JE		fin
-		MOV		AH,0x0e			; ˆê•¶Žš•\Ž¦ƒtƒ@ƒ“ƒNƒVƒ‡ƒ“
-		MOV		BX,15			; ƒJƒ‰[ƒR[ƒh
-		INT		0x10			; ƒrƒfƒIBIOSŒÄ‚Ño‚µ
+		MOV		AH,0x0e			; í•œ ë¬¸ìž í‘œì‹œ ê¸°ëŠ¥
+		MOV		BX,15			; ì»¬ëŸ¬ ì½”ë“œ
+		INT		0x10			; ë¹„ë””ì˜¤ BIOS í˜¸ì¶œ
 		JMP		putloop
 fin:
-		HLT						; ‰½‚©‚ ‚é‚Ü‚ÅCPU‚ð’âŽ~‚³‚¹‚é
-		JMP		fin				; –³ŒÀƒ‹[ƒv
+		HLT						; CPU ì •ì§€ ì‹œí‚´
+		JMP		fin				; ë¬´í•œ ë£¨í”„
 
 msg:
-		DB		0x0a, 0x0a		; ‰üs‚ð2‚Â
-		DB		"hello, world"
-		DB		0x0a			; ‰üs
+		DB		0x0a, 0x0a		; ì¤„ë°”ê¿ˆ ë¬¸ìž 2ê°œ
+		DB		"good i e yo you good good good"
+		DB		0x0a			; ì¤„ë°”ê¿ˆ
 		DB		0
 
-		RESB	0x7dfe-$		; 0x7dfe‚Ü‚Å‚ð0x00‚Å–„‚ß‚é–½—ß
+		RESB	0x7dfe-$		; ë‚˜ë¨¸ì§€ì¹¸ 0ì±„ìš°ê¸°
 
 		DB		0x55, 0xaa
 
-; ˆÈ‰º‚Íƒu[ƒgƒZƒNƒ^ˆÈŠO‚Ì•”•ª‚Ì‹Lq
+; ë¶€íŠ¸ì„¹í„° ì´ì™¸ ë¶€ë¶„ì— ì ì„ ë‚´ìš©ë“¤
 
 		DB		0xf0, 0xff, 0xff, 0x00, 0x00, 0x00, 0x00, 0x00
 		RESB	4600
