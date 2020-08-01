@@ -1,77 +1,84 @@
 ; haribote-ipl
 ; TAB=4
 
-		ORG		0x7c00			; ‚±‚ÌƒvƒƒOƒ‰ƒ€‚ª‚Ç‚±‚É“Ç‚Ýž‚Ü‚ê‚é‚Ì‚©
+		ORG		0x7c00			; ë©”ëª¨ë¦¬ ì•ˆì—ì„œ ë¡œë”©ë˜ëŠ” ê³³
 
-; ˆÈ‰º‚Í•W€“I‚ÈFAT12ƒtƒH[ƒ}ƒbƒgƒtƒƒbƒs[ƒfƒBƒXƒN‚Ì‚½‚ß‚Ì‹Lq
+; ì•„ëž˜ëŠ” í‘œì¤€ FAT12 í¬ë§· í”Œë¡œí”¼ ë””ìŠ¤ì¼“ì„ ìœ„í•œ ë‚´ìš©ë“¤
 
 		JMP		entry
 		DB		0x90
-		DB		"HARIBOTE"		; ƒu[ƒgƒZƒNƒ^‚Ì–¼‘O‚ðŽ©—R‚É‘‚¢‚Ä‚æ‚¢i8ƒoƒCƒgj
-		DW		512				; 1ƒZƒNƒ^‚Ì‘å‚«‚³i512‚É‚µ‚È‚¯‚ê‚Î‚¢‚¯‚È‚¢j
-		DB		1				; ƒNƒ‰ƒXƒ^‚Ì‘å‚«‚³i1ƒZƒNƒ^‚É‚µ‚È‚¯‚ê‚Î‚¢‚¯‚È‚¢j
-		DW		1				; FAT‚ª‚Ç‚±‚©‚çŽn‚Ü‚é‚©i•’Ê‚Í1ƒZƒNƒ^–Ú‚©‚ç‚É‚·‚éj
-		DB		2				; FAT‚ÌŒÂ”i2‚É‚µ‚È‚¯‚ê‚Î‚¢‚¯‚È‚¢j
-		DW		224				; ƒ‹[ƒgƒfƒBƒŒƒNƒgƒŠ—Ìˆæ‚Ì‘å‚«‚³i•’Ê‚Í224ƒGƒ“ƒgƒŠ‚É‚·‚éj
-		DW		2880			; ‚±‚Ìƒhƒ‰ƒCƒu‚Ì‘å‚«‚³i2880ƒZƒNƒ^‚É‚µ‚È‚¯‚ê‚Î‚¢‚¯‚È‚¢j
-		DB		0xf0			; ƒƒfƒBƒA‚Ìƒ^ƒCƒvi0xf0‚É‚µ‚È‚¯‚ê‚Î‚¢‚¯‚È‚¢j
-		DW		9				; FAT—Ìˆæ‚Ì’·‚³i9ƒZƒNƒ^‚É‚µ‚È‚¯‚ê‚Î‚¢‚¯‚È‚¢j
-		DW		18				; 1ƒgƒ‰ƒbƒN‚É‚¢‚­‚Â‚ÌƒZƒNƒ^‚ª‚ ‚é‚©i18‚É‚µ‚È‚¯‚ê‚Î‚¢‚¯‚È‚¢j
-		DW		2				; ƒwƒbƒh‚Ì”i2‚É‚µ‚È‚¯‚ê‚Î‚¢‚¯‚È‚¢j
-		DD		0				; ƒp[ƒeƒBƒVƒ‡ƒ“‚ðŽg‚Á‚Ä‚È‚¢‚Ì‚Å‚±‚±‚Í•K‚¸0
-		DD		2880			; ‚±‚Ìƒhƒ‰ƒCƒu‘å‚«‚³‚ð‚à‚¤ˆê“x‘‚­
-		DB		0,0,0x29		; ‚æ‚­‚í‚©‚ç‚È‚¢‚¯‚Ç‚±‚Ì’l‚É‚µ‚Ä‚¨‚­‚Æ‚¢‚¢‚ç‚µ‚¢
-		DD		0xffffffff		; ‚½‚Ô‚ñƒ{ƒŠƒ…[ƒ€ƒVƒŠƒAƒ‹”Ô†
-		DB		"HARIBOTEOS "	; ƒfƒBƒXƒN‚Ì–¼‘Oi11ƒoƒCƒgj
-		DB		"FAT12   "		; ƒtƒH[ƒ}ƒbƒg‚Ì–¼‘Oi8ƒoƒCƒgj
-		RESB	18				; ‚Æ‚è‚ ‚¦‚¸18ƒoƒCƒg‚ ‚¯‚Ä‚¨‚­
+		DB		"HELLOIPL"		; ë¶€íŠ¸ì„¹í„° ì´ë¦„. ë§ˆìŒëŒ€ë¡œí•´ë„ ok
+		DW		512				; 1ì„¹í„° í¬ê¸°(ë°”ì´íŠ¸ ë‹¨ìœ„, 512)
+		DB		1				; í´ëŸ¬ìŠ¤í„° í¬ê¸°(1ë¡œ í•´ì•¼ë¨)
+		DW		1				; ì˜ˆì•½ëœ ì„¹í„°ìˆ˜ 
+		DB		2				; ë””ìŠ¤í¬ FAT í…Œì´ë¸” ìˆ˜
+		DW		224				; ë£¨íŠ¸ ë””ë ‰í† ë¦¬ ì—”íŠ¸ë¦¬ ìˆ˜ (ë³´í†µ 224ì—”íŠ¸ë¦¬)
+		DW		2880				; ë””ìŠ¤í¬ ì´ì„¹í„°ìˆ˜
+		DW		0xf0				; ë¯¸ë””ì–´ íƒ€ìž…
+		DW		9				; í•˜ë‚˜ì˜ FAT í…Œì´ë¸” ì„¹í„° ìˆ˜
+		DW		18				; 1íŠ¸ëž™ì— ëª‡ ìƒ‰í„°ê°€ìžˆëŠ”ì§€
+		DW		2				; í—¤ë“œì˜ ìˆ˜
+		DD		0				; íŒŒí‹°ì…˜ ì—†ìœ¼ë¯€ë¡œ 0
+		DD		2880				; ë“œë¼ì´ë¸Œ í¬ê¸° í•œë²ˆë”ì”€
+		DB		0, 0, 0x29			; í•„ìš”í•˜ë‹¤ê³ í•¨
+		DD		0xffffffff			; ë³¼ë¥¨ ì‹œë¦¬ì–¼ ë²ˆí˜¸
+		DB		"HELLO-OS  "		; ë””ìŠ¤í¬ ì´ë¦„
+		DB		"FAT12   "			; í¬ë©§ì´ë¦„
+		RESB	18				; 18ë°”ì´íŠ¸ ë‚¨ê¹€
 
-; ƒvƒƒOƒ‰ƒ€–{‘Ì
+; í”„ë¡œê·¸ëž¨ ë³¸ì²´
 
 entry:
-		MOV		AX,0			; ƒŒƒWƒXƒ^‰Šú‰»
+		MOV		AX,0			; ë ˆì§€ìŠ¤í„° ì´ˆê¸°í™”
 		MOV		SS,AX
 		MOV		SP,0x7c00
 		MOV		DS,AX
+		MOV		ES,AX
 
-; ƒfƒBƒXƒN‚ð“Ç‚Þ
+		MOV		SI,msg
+
+
+; ì¶”ê°€ëœ ë¶€ë¶„
 
 		MOV		AX,0x0820
 		MOV		ES,AX
-		MOV		CH,0			; ƒVƒŠƒ“ƒ_0
-		MOV		DH,0			; ƒwƒbƒh0
-		MOV		CL,2			; ƒZƒNƒ^2
+		MOV		CH,0			; ì‹¤ë¦°ë” 0
+		MOV		DH,0			; í—¤ë“œ 0
+		MOV		CL,2			; ì„¹í„° 2 
 
-		MOV		AH,0x02			; AH=0x02 : ƒfƒBƒXƒN“Ç‚Ýž‚Ý
-		MOV		AL,1			; 1ƒZƒNƒ^
+		MOV		AH,0x02			; AH=0x02 :ë””ìŠ¤í¬ ì½ê¸°
+		MOV		AL,1			; 1ì„¹í„°
 		MOV		BX,0
-		MOV		DL,0x00			; Aƒhƒ‰ƒCƒu
-		INT		0x13			; ƒfƒBƒXƒNBIOSŒÄ‚Ño‚µ
+		MOV		DL,0x00			; A ë“œë¼ì´ë¸Œ
+		INT		0x13			; ë””ìŠ¤í¬ BIOS ì¶”ì¶œ
 		JC		error
 
-; “Ç‚ÝI‚í‚Á‚½‚¯‚Ç‚Æ‚è‚ ‚¦‚¸‚â‚é‚±‚Æ‚È‚¢‚Ì‚ÅQ‚é
+
+
 
 fin:
-		HLT						; ‰½‚©‚ ‚é‚Ü‚ÅCPU‚ð’âŽ~‚³‚¹‚é
-		JMP		fin				; –³ŒÀƒ‹[ƒv
+		HLT						; CPU ì •ì§€ ì‹œí‚´
+		JMP		fin				; ë¬´í•œ ë£¨í”„
 
 error:
 		MOV		SI,msg
+
 putloop:
 		MOV		AL,[SI]
-		ADD		SI,1			; SI‚É1‚ð‘«‚·
+		ADD		SI,1			; SIì— 1 ë”í•¨
 		CMP		AL,0
 		JE		fin
-		MOV		AH,0x0e			; ˆê•¶Žš•\Ž¦ƒtƒ@ƒ“ƒNƒVƒ‡ƒ“
-		MOV		BX,15			; ƒJƒ‰[ƒR[ƒh
-		INT		0x10			; ƒrƒfƒIBIOSŒÄ‚Ño‚µ
+		MOV		AH,0x0e			; í•œ ë¬¸ìž í‘œì‹œ ê¸°ëŠ¥
+		MOV		BX,15			; ì»¬ëŸ¬ ì½”ë“œ
+		INT		0x10			; ë¹„ë””ì˜¤ BIOS í˜¸ì¶œ
 		JMP		putloop
+
 msg:
-		DB		0x0a, 0x0a		; ‰üs‚ð2‚Â
-		DB		"load error"
-		DB		0x0a			; ‰üs
+		DB		0x0a, 0x0a		; ì¤„ë°”ê¿ˆ ë¬¸ìž 2ê°œ
+		DB		"good i e yo you good good good"
+		DB		0x0a			; ì¤„ë°”ê¿ˆ
 		DB		0
 
-		RESB	0x7dfe-$		; 0x7dfe‚Ü‚Å‚ð0x00‚Å–„‚ß‚é–½—ß
+		RESB	0x7dfe-$		; ë‚˜ë¨¸ì§€ì¹¸ 0ì±„ìš°ê¸°
 
 		DB		0x55, 0xaa
