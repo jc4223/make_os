@@ -80,10 +80,6 @@ next:
 
 		JMP		0xc200
 
-fin:
-		HLT						; CPU 정지 시킴
-		JMP		fin				; 무한 루프
-
 error:
 		MOV		SI,msg
 
@@ -96,6 +92,10 @@ putloop:
 		MOV		BX,15			; 컬러 코드
 		INT		0x10			; 비디오 BIOS 호출
 		JMP		putloop
+
+fin:
+		HLT						; CPU 정지 시킴
+		JMP		fin				; 무한 루프
 
 msg:
 		DB		0x0a, 0x0a		; 줄바꿈 문자 2개
