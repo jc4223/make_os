@@ -33,10 +33,6 @@ entry:
 		MOV		SS,AX
 		MOV		SP,0x7c00
 		MOV		DS,AX
-		MOV		ES,AX
-
-		MOV		SI,msg
-
 
 ; 디스크 읽기
 
@@ -46,14 +42,21 @@ entry:
 		MOV		DH,0			; 헤드 0
 		MOV		CL,2			; 섹터 2 
 
-		MOV		AH,0x02			; AH=0x02 :디스크 읽기
-		MOV		AL,1			; 1섹터
+		MOV		SI,0			; 실패 횟수를 세는 레지스터
+retry:
+		MOV		AH,0x02			; AH=0x02 : 디스크 읽기
+		MOV		AL,1			; 1 섹터
 		MOV		BX,0
 		MOV		DL,0x00			; A 드라이브
+		INT		0x13			; 디스크 바이오스 호출
+		JNC		fin				; 에러 없으면 fin으로
+		ADD		SI,1			; SI에 1더하기
+		CMP		SI,5			; SI와 5비교
+		JAE		error			; SI >= 5 이면 에러로
+		MOV		AH,0x00
+		MOV		DL,0x00			; A 드라이브
 		INT		0x13			; 디스크 BIOS 추출
-		JC		error
-
-
+		JMP		retry
 
 
 fin:
@@ -82,3 +85,4 @@ msg:
 		RESB	0x7dfe-$		; 나머지칸 0채우기
 
 		DB		0x55, 0xaa
+
