@@ -9,8 +9,6 @@ void HariMain(void)
 
 		p = i;
 		*p = i & 0x0f;
-
-		/* ����� write_mem8(i, i & 0x0f); �̑���ɂȂ� */
 	}
 
 	for (;;) {
