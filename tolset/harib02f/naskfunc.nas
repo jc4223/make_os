@@ -1,10 +1,10 @@
 ; naskfunc
 ; TAB=4
 
-[FORMAT "WCOFF"]				; ƒIƒuƒWƒFƒNƒgƒtƒ@ƒCƒ‹‚ðì‚éƒ‚[ƒh	
-[INSTRSET "i486p"]				; 486‚Ì–½—ß‚Ü‚ÅŽg‚¢‚½‚¢‚Æ‚¢‚¤‹Lq
-[BITS 32]						; 32ƒrƒbƒgƒ‚[ƒh—p‚Ì‹@ŠBŒê‚ðì‚ç‚¹‚é
-[FILE "naskfunc.nas"]			; ƒ\[ƒXƒtƒ@ƒCƒ‹–¼î•ñ
+[FORMAT "WCOFF"]				; ì˜¤ë¸Œì íŠ¸ íŒŒì¼ ë§Œë“œëŠ” ëª¨ë“œ
+[INSTRSET "i486p"]				; ì´ í”„ë¡œê·¸ëž¨ì´ 486 ì•„í‚¤í…ì²˜ ìš© í”„ë¡œê·¸ëž¨ìž„ì„ naskì— ì•Œë¦¼
+[BITS 32]						; 32ë¹„íŠ¸ ëª¨ë“œìš© ê¸°ê³„ì–´ ë§Œë“¬
+[FILE "naskfunc.nas"]			; ì†ŒìŠ¤ íŒŒì¼ëª… ì •ë³´
 
 		GLOBAL	_io_hlt, _io_cli, _io_sti, _io_stihlt
 		GLOBAL	_io_in8,  _io_in16,  _io_in32
@@ -66,12 +66,12 @@ _io_out32:	; void io_out32(int port, int data);
 		RET
 
 _io_load_eflags:	; int io_load_eflags(void);
-		PUSHFD		; PUSH EFLAGS ‚Æ‚¢‚¤ˆÓ–¡
+		PUSHFD		; PUSH EFLAGS ë¼ëŠ” ëœ»
 		POP		EAX
 		RET
 
 _io_store_eflags:	; void io_store_eflags(int eflags);
 		MOV		EAX,[ESP+4]
 		PUSH	EAX
-		POPFD		; POP EFLAGS ‚Æ‚¢‚¤ˆÓ–¡
+		POPFD		; POP EFLAGS ë¼ëŠ” ëœ»
 		RET
